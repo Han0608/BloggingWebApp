@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Eskimo - HTML Template</title>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- CSS FILES -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href="/css/slick.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- READING POSITION INDICATOR -->
+    <progress value="0" id="eskimo-progress-bar">
+        <span class="eskimo-progress-container">
+            <span class="eskimo-progress-bar"></span>
+        </span>
+    </progress>
+    <!-- SITE WRAPPER -->
+    <div id="eskimo-site-wrapper">
+        <!-- MAIN CONTAINER -->
+        <main id="eskimo-main-container">
+            <div class="container">
+                <!-- SIDEBAR -->
+                <div id="eskimo-sidebar">
+                    <div id="eskimo-sidebar-wrapper" class="d-flex align-items-start flex-column h-100 w-100">
+                        <!-- LOGO -->
+                        <div id="eskimo-logo-cell" class="w-100">
+                            <a class="eskimo-logo-link" href="index.html">
+                                <img src="/images/logo.png" class="eskimo-logo" alt="eskimo" />
+                            </a>
+                        </div>
+                        <!-- MENU CONTAINER -->
+                        <div id="eskimo-sidebar-cell" class="w-100">
+                            <!-- MOBILE MENU BUTTON -->
+                            <div id="eskimo-menu-toggle">MENU</div>
+                                        <front class="btn btn-sm btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${admin.adminName}"></span>的博客&nbsp;&nbsp;&nbsp;&nbsp;</front><br>
+			
+                            <!-- MENU -->
+                            <nav id="eskimo-main-menu" class="menu-main-menu-container">
+                                <ul class="eskimo-menu-ul">
+                                    <li><a href="/front/listUser">首页</a></li>
+                                    <li><a href="/front/listUser">查看所有用户（可操作）</a></li>
+                                    <li><a href="/admin/listAdmin">查看所有管理员（仅限查看）</a></li>
+                                    <li><a href="/admin/register">管理员注册</a></li>
+                                </ul>
+                               
+								<ul class="eskimo-menu-ul">
+                                    <li><a href="/front/logout">退出登录</a></li>                                   
+                                </ul>
+                            </nav>
+			
+		</div>
+                            
+                        </div>
+                        <!-- SOCIAL MEDIA ICONS -->
+                        <div id="eskimo-social-cell" class="mt-auto w-100">
+                            <div id="eskimo-social-inner">
+                                <ul class="eskimo-social-icons">
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TOP ICONS -->
+                <ul class="eskimo-top-icons">
+                    <li id="eskimo-panel-icon">
+                        <a href="#eskimo-panel" class="eskimo-panel-open"><i class="fa fa-bars"></i></a>
+                    </li>
+                    <li id="eskimo-search-icon">
+                        <a id="eskimo-open-search" href="#"><i class="fa fa-search"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+                <!-- SLIDER -->
+  
+                <!-- BLOG POSTS -->
+                <!-- POST 1 -->
+                <div class="card card-horizontal" th:each="admin:${list}">
+                    <div class="card-body">
+                        <div class="card-horizontal-left">
+                            <div class="card-category">
+                            	<label>管理员ID</label>
+                                <a href="category.html" th:text="${admin.adminId}"></a> </div><br>
+                            <h3 class="card-title">管理员姓名：<a href="single-post.html" th:text="${admin.adminName}"></a></h3>
+                            
+                        </div>
+                        <div class="card-horizontal-right" data-img="/uploads/2018/05/blog12-900x600.jpg">
+                            <a class="card-featured-img" href="single-post.html"></a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+               
+                <!-- DIVIDER -->
+                <hr class="section-divider" />
+
+                <!-- CAROUSEL -->
+               
+            </div>
+        </main>
+        <!-- FOOTER -->
+        <footer id="eskimo-footer">
+            <div class="container">
+                <div class="row eskimo-footer-wrapper">
+                    <!-- FOOTER WIDGET 1 -->
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                        <h5 class="eskimo-title-with-border"><span>关于我们</span></h5>
+                        <p>粥粥博客，分想生活点滴，为您记录每一个感动瞬间。</p>
+                        <p><a href="about.html" class="btn btn-default">更多资讯</a></p>
+                    </div>
+                    <!-- FOOTER WIDGET 2 -->
+                    <div class="col-12 col-lg-6">
+                        <h5 class="eskimo-title-with-border"><span>时下</span></h5>
+                        <form method="post" action="index.html">
+                            <label>快来订阅我们的邮箱吧！</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" name="EMAIL" placeholder="邮箱地址" required />
+
+                                <div class="input-group-append"> 
+                                    <input type="submit" value="Sign up"  class="btn btn-default" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- CREDITS -->
+                <div class="eskimo-footer-credits">
+                    <p>
+                        @2019 所有权归粥粥所有</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- GO TO TOP BUTTON -->
+    <a id="eskimo-gototop" href="#"><i class="fa fa-chevron-up"></i></a>
+   
+    <!-- FULLSCREEN SEARCH -->
+    <div id="eskimo-fullscreen-search">
+        <div id="eskimo-fullscreen-search-content">
+            <a href="#" id="eskimo-close-search"><i class="fa fa-times"></i></a>
+            <form role="search" method="get" action="search.html" class="eskimo-lg-form">
+                <div class="input-group">
+                   <input type="text" class="form-control form-control-lg" placeholder="Enter a keyword..." name="s" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- JS FILES -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/salvattore.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/panel.js"></script>
+    <script src="/js/reading-position-indicator.js"></script>
+    <script src="/js/custom.js"></script>
+    <!-- POST SLIDER -->
+    <script>
+        (function($) {
+            "use strict";
+            $(document).ready(function() {
+                $('#eskimo-post-slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    slidesToShow: 1,
+                    arrows: true,
+                    dots: false,
+                    fade: true
+                });
+            });
+            $(window).on('load', function() {
+                $('#eskimo-post-slider').css('opacity', '1');
+                $('#eskimo-post-slider').parent().removeClass('eskimo-bg-loader');
+            });
+        })(jQuery);
+    </script>
+    <!-- POST CAROUSEL -->
+    <script>
+        (function($) {
+            "use strict";
+            $(document).ready(function() {
+                $('#eskimo-post-carousel').slick({
+                    infinite: false,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    dots: false,
+                    slidesToShow: 3,
+                    responsive: [{
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }, {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }]
+
+                });
+                $('#eskimo-post-carousel').css('opacity', '1');
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
